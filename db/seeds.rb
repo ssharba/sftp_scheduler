@@ -6,27 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-ClientFile.destroy_all
+hashes = [
+  { file_format: "ali_lol_12052017.txt", regex: "DHP_Grp", client_id: 1 },
+  { file_format: "ali_lkl_12052017.txt", regex: "DHP_Grp", client_id: 1 },
+  { file_format: "ali_ldl_12052017.txt", regex: "DHP_Grp", client_id: 2  },
+  { file_format: "ali_lhl_12052017.txt", regex: "DHP_Grp", client_id: 2  }
+]
 
-ClientFile.create!([{
-  file_format: "ali_lol_12052017.txt",
-  regex: "DHP_Grp",
-  client_id: 1
-},
-{
-  file_format: "ali_lxl_12052017.txt",
-  regex: "DHP_Grp",
-  client_id: 1
-},
-{
-  file_format: "moe_lol_12052017.txt",
-  regex: "DHP_Grp",
-  client_id: 2
-},
-{
-  file_format: "moe_lxl_12052017.txt",
-  regex: "DHP_Grp",
-  client_id: 2
-}])
-
+hashes.each do |hash|
+  ClientFile.find_or_create_by(hash)
+end
 p "Created #{ClientFile.count} files"
