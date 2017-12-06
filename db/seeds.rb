@@ -5,15 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-hashes = [
-  { file_format: "ali_lol_12052017.txt", regex: "DHP_Grp", client_id: 1 },
-  { file_format: "ali_lkl_12052017.txt", regex: "DHP_Grp", client_id: 1 },
-  { file_format: "ali_ldl_12052017.txt", regex: "DHP_Grp", client_id: 2  },
-  { file_format: "ali_lhl_12052017.txt", regex: "DHP_Grp", client_id: 2  }
+client_hashes = [
+  { name: "ALI" }, { name: "MOE" }
 ]
 
-hashes.each do |hash|
-  ClientFile.find_or_create_by(hash)
+client_file_hashes = [
+  { file_format: "GrpYYYYMMDDXXXXXX", regex: "DHP_Grp" },
+  { file_format: "DHP_Medical_ClaimsYYYYMMDDXXXXXX", regex: "DHP_Medical_Claims" },
+  { file_format: "DCClaimsRecovery.MMDDYYYY", regex: "DCClaimsRecovery" },
+  { file_format: "LACClaimsRecovery.MMDDYYYY", regex: "LACClaimsRecovery" }
+]
+
+clients = client_hashes.map do |client|
+  Client.create(client)
+end
+
+client_file_hashes.each_with_index do |file, index|
+  if index <= 1
+    ClientFile.create(file.merge(client: clients[0]))
+  else
+    ClientFile.create(file.merge(client: clients[1]))
+  end
 end
 p "Created #{ClientFile.count} files"
