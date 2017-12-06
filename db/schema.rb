@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204223343) do
+ActiveRecord::Schema.define(version: 20171205185121) do
 
   create_table "client_files", force: :cascade do |t|
     t.string   "file_format"
     t.integer  "client_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "regex"
     t.index ["client_id"], name: "index_client_files_on_client_id"
   end
 
