@@ -1,9 +1,9 @@
 class DownloadJob
   include Sidekiq::Worker
-  sidekiq_options queue:'download_file', retry: 3#10
+  sidekiq_options queue:'download_file', retry: 10
 
   sidekiq_retry_in do |count|
-     10#600
+     600
   end
 
   sidekiq_retries_exhausted do |msg, e|
