@@ -2,8 +2,4 @@ class Client < ApplicationRecord
   has_many :client_files, dependent: :destroy
 
   accepts_nested_attributes_for :client_files
-  
-  def sftp_download
-    DownloadJob.perform_async(id)
-  end
 end
