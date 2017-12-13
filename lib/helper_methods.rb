@@ -11,6 +11,7 @@ module HelperMethods
            unzip_file(files_dir)
       end
 
+
      def aws_upload(files_dir)
         s3 = Aws::S3::Resource.new(access_key_id: ENV['aws_access_key_id'], secret_access_key: ENV['aws_secret_access_key'], region: ENV['region'])
         files_dir.each do |file_path|
@@ -19,8 +20,7 @@ module HelperMethods
           puts "Uploading file #{file_name}"
           obj.upload_file("#{file_path}")
         end
-     end
-
+   end
      def unzip_file (files_dir)
           item_folder = []
           begin
@@ -35,12 +35,11 @@ module HelperMethods
                  end
               end
            end
-
            rescue  Exception=>e
             Rails.logger.error(" The file is extracted   #{e.message}")
            end
             return item_folder
-         end
+      end
 
    end
 end
