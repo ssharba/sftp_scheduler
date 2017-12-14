@@ -24,7 +24,7 @@ module HelperMethods
      def unzip_file (files_dir)
           item_folder = []
           begin
-           Dir["#{files_dir}*.zip"].select.each do |file|
+          file = Dir.glob("#{files_dir}*.zip").first
            Zip::File.open(file) do |zip_file|
              zip_file.each do |entry|
                file_path="#{files_dir}#{entry.name}"
@@ -34,10 +34,9 @@ module HelperMethods
                     end
                  end
               end
-           end
 
            rescue  Exception=>e
-            Rails.logger.error(" The file is extracted   #{e.message}")
+            Rails.logger.error(" The file is #{e.message}")
            end
             return item_folder
          end
