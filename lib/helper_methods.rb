@@ -8,7 +8,7 @@ module HelperMethods
          File.open("#{files_dir}#{file_key}", "wb") do |file|
             #s3.get_object({bucket:ENV['directory_primary'], key: file_key}, target: file)
          end
-           unzip_file("/home/noor/test_downlaod/Ruby on Rails.zip")
+           unzip_file("#{files_dir}#{file_key}")
 
       end
 
