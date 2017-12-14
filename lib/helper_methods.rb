@@ -6,7 +6,7 @@ module HelperMethods
          s3 = Aws::S3::Client.new(access_key_id: ENV['aws_access_key_id'], secret_access_key: ENV['aws_secret_access_key'], region: ENV['region'])
          files_dir = (FileUtils.mkdir_p "#{Dir.home}/test_downlaod/").join(",")
          File.open("#{files_dir}#{file_key}", "wb") do |file|
-            #s3.get_object({bucket:ENV['directory_primary'], key: file_key}, target: file)
+            s3.get_object({bucket:ENV['directory_primary'], key: file_key}, target: file)
          end
            unzip_file("#{files_dir}#{file_key}")
 
