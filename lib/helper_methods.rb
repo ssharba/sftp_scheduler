@@ -8,7 +8,8 @@ module HelperMethods
          File.open("#{files_dir}#{file_key}", "wb") do |file|
             s3.get_object({bucket:ENV['directory_primary'], key: file_key}, target: file)
          end
-           unzip_file(files_dir)
+           unzip_file("#{files_dir}#{file_key}")
+
       end
 
      def aws_upload(files_dir)
@@ -23,7 +24,7 @@ module HelperMethods
      def unzip_file (files_dir)
           item_folder = []
           begin
-          file = Dir.glob("#{files_dir}*.zip").first
+          file = Dir.glob("#{files_dir}").first
            Zip::File.open(file) do |zip_file|
              zip_file.each do |entry|
                file_path="#{files_dir}#{entry.name}"

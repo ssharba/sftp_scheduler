@@ -6,7 +6,7 @@ class Api::V1::ClientController < ApplicationController
   end
 
 
-  def upload_to_aws
+  def upload_to_aws(files_dir)
 
     HelperMethods.aws_upload(files_dir)
 
