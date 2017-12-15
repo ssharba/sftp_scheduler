@@ -9,8 +9,10 @@ gem 'rails', '~> 5.0.6'
 gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'net-sftp', '~> 2.1', '>= 2.1.2'
+gem 'aws-sdk', '~> 3'
+gem 'rubyzip'
+gem "figaro"
 gem 'sidekiq'
-
 group :development, :test do
   gem 'byebug', platform: :mri
 end
