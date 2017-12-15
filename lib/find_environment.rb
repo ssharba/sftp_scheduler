@@ -1,9 +1,9 @@
 class FindEnvironment
   class << self
     def environment_for(client_id)
-      environment = $ENVIRONMENTS.detect do |client_environment|
+      environment = $ENVIRONMENTS.find do |client_environment|
         clients = client_environment[:clients]
-        clients.detect do |client|
+        clients.find do |client|
           client[:client_id] == client_id
         end
       end
