@@ -663,7 +663,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk
+  aws-sdk (~> 3)
   byebug
   figaro
   listen (~> 3.0.5)
@@ -678,4 +678,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.15.3
+   1.16.0
