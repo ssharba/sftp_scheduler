@@ -632,6 +632,7 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.1)
+    rubyzip (1.2.1)
     sidekiq (5.0.5)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -669,6 +670,7 @@ DEPENDENCIES
   net-sftp (~> 2.1, >= 2.1.2)
   puma (~> 3.0)
   rails (~> 5.0.6)
+  rubyzip
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -676,4 +678,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.16.0
+   1.15.3
