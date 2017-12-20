@@ -39,7 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    aws-partitions (1.47.0)
+    aws-partitions (1.48.0)
     aws-sdk (3.0.1)
       aws-sdk-resources (~> 3)
     aws-sdk-acm (1.2.0)
@@ -48,7 +48,7 @@ GEM
     aws-sdk-alexaforbusiness (1.0.0)
       aws-sdk-core (~> 3)
       aws-sigv4 (~> 1.0)
-    aws-sdk-apigateway (1.7.0)
+    aws-sdk-apigateway (1.8.0)
       aws-sdk-core (~> 3)
       aws-sigv4 (~> 1.0)
     aws-sdk-applicationautoscaling (1.6.0)
@@ -57,7 +57,7 @@ GEM
     aws-sdk-applicationdiscoveryservice (1.0.0)
       aws-sdk-core (~> 3)
       aws-sigv4 (~> 1.0)
-    aws-sdk-appstream (1.3.0)
+    aws-sdk-appstream (1.4.0)
       aws-sdk-core (~> 3)
       aws-sigv4 (~> 1.0)
     aws-sdk-appsync (1.0.0)
@@ -507,7 +507,7 @@ GEM
     aws-sdk-servicediscovery (1.0.0)
       aws-sdk-core (~> 3)
       aws-sigv4 (~> 1.0)
-    aws-sdk-ses (1.5.0)
+    aws-sdk-ses (1.6.0)
       aws-sdk-core (~> 3)
       aws-sigv4 (~> 1.0)
     aws-sdk-shield (1.1.0)
@@ -678,4 +678,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.15.3
+   1.16.0
