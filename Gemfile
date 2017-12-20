@@ -10,6 +10,9 @@ gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'net-sftp', '~> 2.1', '>= 2.1.2'
 gem 'sidekiq'
+gem "figaro"
+gem 'aws-sdk'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
