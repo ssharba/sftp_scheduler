@@ -33,21 +33,16 @@ class SampleQueue
     )
   end
 
-  def send_message_batch(messages)
-    SQS.send_message_batch({
-      queue_url: queue_url,
-      entries:  messages
-    })
-  end
-
   def receive_message(number_of_messages = 1)#10 messages max
     SQS.receive_message({
       queue_url: queue_url,
       message_attribute_names: ["All"], # Receive all custom attributes.
       max_number_of_messages: number_of_messages,
-      wait_time_seconds: 0, # Do not wait to check for the message.
-      visibility_timeout: 0
-    }).messages
+      wait_time_seconds: 0
+    }).messages.each do |message|
+      # Do  what you want with the message brefore deleting
+      delete_message(message.receipt_handle)
+    end
   end
 
   def delete_message(receipt_handle)
