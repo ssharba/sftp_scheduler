@@ -1,7 +1,7 @@
 class TestRetryWorker
   include Sidekiq::Worker
 
-  # create unattribut called retry_count for sidekiq
+  # create attribut called retry_count for sidekiq
   attr_accessor :retry_count
 
   # This will increase the count by 1, Note it's initial value is 0
