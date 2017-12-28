@@ -13,6 +13,7 @@ gem 'aws-sdk', '~> 3'
 gem 'rubyzip'
 gem "figaro"
 gem 'sidekiq'
+gem 'stomp'
 
 group :development, :test do
   gem 'byebug', platform: :mri
