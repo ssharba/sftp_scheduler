@@ -6,10 +6,8 @@ class Worker
   end
 
   def subscribe
-    Client.subscribe(@queue) do |marshalled_message|
-    	original_message = Marshal.load(marshalled_message)
-    	# process message
-      puts original_message
+    Client.subscribe(@queue) do |message|
+      puts message
    	end
   end
 end
