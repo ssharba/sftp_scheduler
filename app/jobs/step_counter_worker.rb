@@ -12,7 +12,7 @@ class StepCounterWorker
       puts "1 +++++"
       raise "error number 1"
     end
-    #HelperMethods.step_counter =3
+   
     if HelperMethods.step_counter == 3
       puts "3 +++++"
       raise "error number 3"
